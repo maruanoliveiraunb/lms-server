@@ -7,6 +7,7 @@ class Request {
             status: statusConstants.SUCCESS,
             data: data,
             msg: msg,
+            timestamp: new Date(),
         };
     }
 
@@ -15,6 +16,7 @@ class Request {
             status: statusConstants.ERROR,
             result: result,
             msg: msg,
+            timestamp: new Date(),
         }
     }
 
