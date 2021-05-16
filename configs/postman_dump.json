@@ -1,0 +1,162 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "380ec540-45a3-4342-86fc-4a78adec09de",
+			"name": "LMS SERVER",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [],
+			"folders_order": [
+				"c885cada-118f-4643-aad8-96d7adb5c389"
+			],
+			"protocolProfileBehavior": {},
+			"folders": [
+				{
+					"id": "c885cada-118f-4643-aad8-96d7adb5c389",
+					"name": "User",
+					"description": "",
+					"auth": null,
+					"events": null,
+					"collection": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folder": null,
+					"order": [
+						"c76b611e-4b43-4f88-a44a-77d13998c3d5",
+						"c717c574-9b7c-4059-b564-2fd6b4dfaa1e",
+						"8f0c3808-e5aa-456f-bfb1-1ec8ada551f5",
+						"a616c563-9011-4146-9c68-9fd0b90c4862"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folderId": "c885cada-118f-4643-aad8-96d7adb5c389"
+				}
+			],
+			"requests": [
+				{
+					"id": "8f0c3808-e5aa-456f-bfb1-1ec8ada551f5",
+					"name": "User :: Update",
+					"url": "http://localhost:3002/user/update",
+					"description": "",
+					"data": [
+						{
+							"key": "id",
+							"value": "60a0264167f19bb7231909b4",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "name",
+							"value": "Maruan Pessego",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "c885cada-118f-4643-aad8-96d7adb5c389",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "a616c563-9011-4146-9c68-9fd0b90c4862",
+					"name": "User :: Delete by ID",
+					"url": "http://localhost:3002/user/60a0264167f19bb7231909b4",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "c885cada-118f-4643-aad8-96d7adb5c389",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				},
+				{
+					"id": "c717c574-9b7c-4059-b564-2fd6b4dfaa1e",
+					"name": "User :: Create",
+					"url": "http://localhost:3002/user",
+					"description": "",
+					"data": [
+						{
+							"key": "name",
+							"value": "Olívia Pessego 1",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "email",
+							"value": "olivia1@teste.com.br",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "c885cada-118f-4643-aad8-96d7adb5c389",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "c76b611e-4b43-4f88-a44a-77d13998c3d5",
+					"name": "User :: Find by ID",
+					"url": "http://localhost:3002/user/60a0264167f19bb7231909b4",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "c885cada-118f-4643-aad8-96d7adb5c389",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "f091ee69-6bf4-4573-b21d-f08e09cd3265",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}
