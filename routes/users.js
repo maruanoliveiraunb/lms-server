@@ -31,22 +31,4 @@ router.delete('/user/:id', async (req, res) => {
     res.send(result)
 })
 
-// router.post('/user', async (req, res) => {
-//     // const user = new User({name: 'Maruan', email: 'maruanoliveira@gmail.com'});
-//
-//     // const resultUser = await UsersService.getUserByName('Dale');
-//
-//     // const user = new UsersService('Olivia', 'oliviaoliveira@gmail.com');
-//     //
-//     // const result = await user.insert();
-//
-//     const user = new UsersService('Olivia Pessego Oliveira 2', 'oliviaoliveira@gmail.com', '609894cc5cb8584c2df94efd');
-//
-//     const result = await user.delete();
-//
-//     console.log('query user', result);
-//
-//     res.send('Hello user!')
-// })
-
 module.exports = router;

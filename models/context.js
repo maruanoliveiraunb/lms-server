@@ -10,7 +10,7 @@ const ContextSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+        users: [mongoose.Schema.Types.ObjectId],
     }
 );
 

@@ -10,10 +10,30 @@
 			"variables": [],
 			"order": [],
 			"folders_order": [
-				"c885cada-118f-4643-aad8-96d7adb5c389"
+				"c885cada-118f-4643-aad8-96d7adb5c389",
+				"c7bfc7a9-c4b6-48c7-b5db-9326321e9471"
 			],
 			"protocolProfileBehavior": {},
 			"folders": [
+				{
+					"id": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
+					"name": "Context",
+					"description": "",
+					"auth": null,
+					"events": null,
+					"collection": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folder": null,
+					"order": [
+						"fbea5a33-277a-4753-80c8-c044e22c2971",
+						"8bd164cd-e367-4cf6-b762-d4f3a35a202a",
+						"bcde22a4-e550-4506-9e0d-4f894f8cb9bd",
+						"fe80f207-c09c-44aa-ab11-2ffac064c90d"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folderId": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471"
+				},
 				{
 					"id": "c885cada-118f-4643-aad8-96d7adb5c389",
 					"name": "User",
@@ -35,6 +55,42 @@
 				}
 			],
 			"requests": [
+				{
+					"id": "8bd164cd-e367-4cf6-b762-d4f3a35a202a",
+					"name": "Context :: Create",
+					"url": "http://localhost:3002/context",
+					"description": "",
+					"data": [
+						{
+							"key": "name",
+							"value": "JS",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "type",
+							"value": "COURSE",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"headers": "",
+					"pathVariables": {}
+				},
 				{
 					"id": "8f0c3808-e5aa-456f-bfb1-1ec8ada551f5",
 					"name": "User :: Update",
@@ -92,6 +148,32 @@
 					"pathVariables": {}
 				},
 				{
+					"id": "bcde22a4-e550-4506-9e0d-4f894f8cb9bd",
+					"name": "Context :: Update",
+					"url": "http://localhost:3002/context/update",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"rawModeData": "{\n    \"id\": \"60a0a713e293febcdc131696\",\n    \"name\": \"Curso de JS\",\n    \"type\": \"COURSE\",\n    \"users\": [\"60a0a250b3f4c9ba0e32b7c1\", \"60a0a26071613cba33799748\"]\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
 					"id": "c717c574-9b7c-4059-b564-2fd6b4dfaa1e",
 					"name": "User :: Create",
 					"url": "http://localhost:3002/user",
@@ -146,13 +228,53 @@
 					"helperAttributes": null,
 					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
 					"pathVariables": {}
+				},
+				{
+					"id": "fbea5a33-277a-4753-80c8-c044e22c2971",
+					"name": "Context :: Find by ID",
+					"url": "http://localhost:3002/context/60a0a713e293febcdc131696",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				},
+				{
+					"id": "fe80f207-c09c-44aa-ab11-2ffac064c90d",
+					"name": "Context :: Delete by ID",
+					"url": "http://localhost:3002/context/60a0a6cae293febcdc131695",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
 				}
 			]
 		}
 	],
 	"environments": [
 		{
-			"id": "f091ee69-6bf4-4573-b21d-f08e09cd3265",
+			"id": "410a2306-866d-4889-ba40-86cfbff1f8a3",
 			"name": "My Workspace - globals",
 			"values": []
 		}
