@@ -1,0 +1,5 @@
+module.exports = {
+    LEARNER: 'LEARNER',
+    INSTRUCTOR: 'INSTRUCTOR',
+    ADMINISTRATOR: 'ADMINISTRATOR',
+}
