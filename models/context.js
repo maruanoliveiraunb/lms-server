@@ -10,7 +10,12 @@ const ContextSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        users: [mongoose.Schema.Types.ObjectId],
+        users: [
+            {
+                id: mongoose.Schema.Types.ObjectId,
+                role: String
+            }
+        ],
     }
 );
 

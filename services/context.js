@@ -47,7 +47,13 @@ class Contexts {
 
     async update() {
         const query = { _id: this.id };
-        const objectIdUsers = this.users.map(user => mongoose.Types.ObjectId(user))
+        const objectIdUsers = this.users.map(user => {
+            const { id, role } = user;
+            return {
+                role,
+                _id: mongoose.Types.ObjectId(id)
+            }
+        });
         const data = { name: this.name, type: this.type, users: objectIdUsers };
         const result = await Context.findOneAndUpdate(query, data, { new: true });
         if (result) {
