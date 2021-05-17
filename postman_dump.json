@@ -169,7 +169,7 @@
 					"currentHelper": null,
 					"helperAttributes": null,
 					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
-					"rawModeData": "{\n    \"id\": \"60a0afcc05c42fbdea6189c0\",\n    \"name\": \"Curso de JS\",\n    \"type\": \"COURSE\",\n    \"users\": [\n        { \n            \"id\": \"60a0a250b3f4c9ba0e32b7c1\",\n            \"role\": \"LEARNER\"\n        },\n        {\n            \"id\": \"60a0a26071613cba33799748\",\n            \"role\": \"LEARNER\"\n        }\n    ]\n}",
+					"rawModeData": "{\n    \"id\": \"60a1eb33eabd06c297e28f31\",\n    \"name\": \"Curso de JS\",\n    \"type\": \"COURSE\",\n    \"users\": [\n        { \n            \"id\": \"60a0a250b3f4c9ba0e32b7c1\",\n            \"role\": \"LEARNER\"\n        },\n        {\n            \"id\": \"60a0a26071613cba33799748\",\n            \"role\": \"LEARNER\"\n        }\n    ]\n}",
 					"headers": "",
 					"pathVariables": {}
 				},
@@ -232,7 +232,7 @@
 				{
 					"id": "fbea5a33-277a-4753-80c8-c044e22c2971",
 					"name": "Context :: Find by ID",
-					"url": "http://localhost:3002/context/60a0a713e293febcdc131696",
+					"url": "http://localhost:3002/context/60a1eb33eabd06c297e28f31",
 					"description": "",
 					"data": null,
 					"dataOptions": null,
@@ -252,7 +252,7 @@
 				{
 					"id": "fe80f207-c09c-44aa-ab11-2ffac064c90d",
 					"name": "Context :: Delete by ID",
-					"url": "http://localhost:3002/context/60a0a6cae293febcdc131695",
+					"url": "http://localhost:3002/context/60a1e75116eb34c1dbbe2252",
 					"description": "",
 					"data": null,
 					"dataOptions": null,
@@ -274,7 +274,7 @@
 	],
 	"environments": [
 		{
-			"id": "a6c8a9bc-0a72-47e9-961d-6f1f281e6343",
+			"id": "de795e5c-43eb-4e34-9193-8e1fcb351443",
 			"name": "My Workspace - globals",
 			"values": []
 		}

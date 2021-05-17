@@ -12,7 +12,7 @@ class Contexts {
     }
 
     static async getByName(name) {
-        const result = await Context.findOne({ name }).exec();
+        const result = await Context.findOne({ name }).populate('users').exec();
         if (result) {
             return Request.success(result, 'Context encontrado');
         }
@@ -20,9 +20,22 @@ class Contexts {
     }
 
     static async getById(id) {
-        const result = await Context.findById(id).exec();
+        const result = await Context.findById(id).populate('users.user').exec();
         if (result) {
-            return Request.success(result, 'Context encontrado');
+            const { name, type, users } = result;
+            const newUsers = users.map(item => {
+                const { role, user } = item;
+                return {
+                    role,
+                    user,
+                };
+            })
+            const clearedContext = {
+                name,
+                type,
+                users: newUsers,
+            }
+            return Request.success(clearedContext, 'Context encontrado');
         }
         return Request.error(result, 'Falha ao encontrar context');
     }
@@ -47,11 +60,11 @@ class Contexts {
 
     async update() {
         const query = { _id: this.id };
-        const objectIdUsers = this.users.map(user => {
-            const { id, role } = user;
+        const objectIdUsers = this.users.map(item => {
+            const { id, role } = item;
             return {
                 role,
-                _id: mongoose.Types.ObjectId(id)
+                user: mongoose.Types.ObjectId(id)
             }
         });
         const data = { name: this.name, type: this.type, users: objectIdUsers };
