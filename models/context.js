@@ -19,6 +19,12 @@ const ContextSchema = new mongoose.Schema(
                 role: String
             }
         ],
+        lineItems: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "LineItem",
+            }
+        ],
     }
 );
 

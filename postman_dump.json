@@ -11,6 +11,7 @@
 			"order": [],
 			"folders_order": [
 				"c885cada-118f-4643-aad8-96d7adb5c389",
+				"1d16b47a-bd42-4c69-a76d-ee1e19965d04",
 				"c7bfc7a9-c4b6-48c7-b5db-9326321e9471"
 			],
 			"protocolProfileBehavior": {},
@@ -35,6 +36,25 @@
 					"folderId": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471"
 				},
 				{
+					"id": "1d16b47a-bd42-4c69-a76d-ee1e19965d04",
+					"name": "Line Item",
+					"description": "",
+					"auth": null,
+					"events": null,
+					"collection": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folder": null,
+					"order": [
+						"760bcdcc-c296-4eba-ae84-93c594af6660",
+						"c6f5e312-268f-42a3-a448-edc34e540a4d",
+						"125dab4d-46d5-48c5-bbac-01f1dbba5810",
+						"0bf5b4cb-7e5d-4782-b1cc-a3d6a14ce610"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folderId": "1d16b47a-bd42-4c69-a76d-ee1e19965d04"
+				},
+				{
 					"id": "c885cada-118f-4643-aad8-96d7adb5c389",
 					"name": "User",
 					"description": "",
@@ -55,6 +75,89 @@
 				}
 			],
 			"requests": [
+				{
+					"id": "0bf5b4cb-7e5d-4782-b1cc-a3d6a14ce610",
+					"name": "Line Item :: Delete by ID",
+					"url": "http://localhost:3002/lineitem/60a1f37b9786c2c3a4547d94",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "1d16b47a-bd42-4c69-a76d-ee1e19965d04",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				},
+				{
+					"id": "125dab4d-46d5-48c5-bbac-01f1dbba5810",
+					"name": "Line Item :: Update",
+					"url": "http://localhost:3002/lineitem/update",
+					"description": "",
+					"data": [
+						{
+							"key": "id",
+							"value": "60a1f37b9786c2c3a4547d94",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "title",
+							"value": "Atividade Interessante 1",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "description",
+							"value": "Outra descrição",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "1d16b47a-bd42-4c69-a76d-ee1e19965d04",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "760bcdcc-c296-4eba-ae84-93c594af6660",
+					"name": "Line Item :: Find by ID",
+					"url": "http://localhost:3002/lineitem/60a1f37b9786c2c3a4547d94",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "1d16b47a-bd42-4c69-a76d-ee1e19965d04",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				},
 				{
 					"id": "8bd164cd-e367-4cf6-b762-d4f3a35a202a",
 					"name": "Context :: Create",
@@ -169,7 +272,43 @@
 					"currentHelper": null,
 					"helperAttributes": null,
 					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
-					"rawModeData": "{\n    \"id\": \"60a1eb33eabd06c297e28f31\",\n    \"name\": \"Curso de JS\",\n    \"type\": \"COURSE\",\n    \"users\": [\n        { \n            \"id\": \"60a0a250b3f4c9ba0e32b7c1\",\n            \"role\": \"LEARNER\"\n        },\n        {\n            \"id\": \"60a0a26071613cba33799748\",\n            \"role\": \"LEARNER\"\n        }\n    ]\n}",
+					"rawModeData": "{\n    \"id\": \"60a1eb33eabd06c297e28f31\",\n    \"name\": \"Curso de JS\",\n    \"type\": \"COURSE\",\n    \"users\": [\n        { \n            \"id\": \"60a0a250b3f4c9ba0e32b7c1\",\n            \"role\": \"LEARNER\"\n        },\n        {\n            \"id\": \"60a0a26071613cba33799748\",\n            \"role\": \"LEARNER\"\n        }\n    ],\n    \"lineItems\": [\n        \"60a1f44caac160c49f42ed09\"\n    ]\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
+					"id": "c6f5e312-268f-42a3-a448-edc34e540a4d",
+					"name": "Line Item :: Create",
+					"url": "http://localhost:3002/lineitem",
+					"description": "",
+					"data": [
+						{
+							"key": "title",
+							"value": "Atividade 1",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						},
+						{
+							"key": "description",
+							"value": "Descrição da atividade 1",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "1d16b47a-bd42-4c69-a76d-ee1e19965d04",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
 					"headers": "",
 					"pathVariables": {}
 				},
@@ -274,7 +413,7 @@
 	],
 	"environments": [
 		{
-			"id": "de795e5c-43eb-4e34-9193-8e1fcb351443",
+			"id": "90cb7670-3ccd-4a9d-99db-9aa57faee252",
 			"name": "My Workspace - globals",
 			"values": []
 		}

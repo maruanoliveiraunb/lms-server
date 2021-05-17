@@ -4,11 +4,12 @@ const Request = require('./request');
 
 class Contexts {
 
-    constructor({ id, name, type, users }) {
+    constructor({ id, name, type, users, lineItems }) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.users = users;
+        this.lineItems = lineItems;
     }
 
     static async getByName(name) {
@@ -20,9 +21,13 @@ class Contexts {
     }
 
     static async getById(id) {
-        const result = await Context.findById(id).populate('users.user').exec();
+        const result = await Context
+            .findById(id)
+            .populate('users.user')
+            .populate('lineItems')
+            .exec();
         if (result) {
-            const { name, type, users } = result;
+            const { name, type, users, lineItems } = result;
             const newUsers = users.map(item => {
                 const { role, user } = item;
                 return {
@@ -33,6 +38,7 @@ class Contexts {
             const clearedContext = {
                 name,
                 type,
+                lineItems,
                 users: newUsers,
             }
             return Request.success(clearedContext, 'Context encontrado');
@@ -67,7 +73,12 @@ class Contexts {
                 user: mongoose.Types.ObjectId(id)
             }
         });
-        const data = { name: this.name, type: this.type, users: objectIdUsers };
+        const data = {
+            name: this.name,
+            type: this.type,
+            users: objectIdUsers,
+            lineItems: this.lineItems,
+        };
         const result = await Context.findOneAndUpdate(query, data, { new: true });
         if (result) {
             return Request.success(result, 'Context atualizado com sucesso');

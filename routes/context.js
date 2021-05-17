@@ -18,8 +18,8 @@ router.post('/context', async (req, res) => {
 
 router.post('/context/update', async (req, res) => {
     const { body } = req;
-    const { id, name, type, users } = body;
-    const context = new ContextService({ id, name, type, users });
+    const { id, name, type, users, lineItems } = body;
+    const context = new ContextService({ id, name, type, users, lineItems });
     const result = await context.update();
     res.send(result);
 })
