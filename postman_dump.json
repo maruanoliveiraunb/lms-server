@@ -12,10 +12,30 @@
 			"folders_order": [
 				"c885cada-118f-4643-aad8-96d7adb5c389",
 				"1d16b47a-bd42-4c69-a76d-ee1e19965d04",
-				"c7bfc7a9-c4b6-48c7-b5db-9326321e9471"
+				"c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
+				"3daa54bd-38da-4f65-8b17-60174a0be7cf"
 			],
 			"protocolProfileBehavior": {},
 			"folders": [
+				{
+					"id": "3daa54bd-38da-4f65-8b17-60174a0be7cf",
+					"name": "Answer",
+					"description": "",
+					"auth": null,
+					"events": null,
+					"collection": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folder": null,
+					"order": [
+						"674c380b-b9c5-4ee7-a9b3-8560f55642ce",
+						"a739d67d-ac94-4922-b8ec-31e8c2f8cbc3",
+						"69178be3-f35a-4698-a4b5-bd3f6ee180db",
+						"5f481baa-63ca-4d4e-8410-e257c5dc9953"
+					],
+					"folders_order": [],
+					"protocolProfileBehavior": {},
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folderId": "3daa54bd-38da-4f65-8b17-60174a0be7cf"
+				},
 				{
 					"id": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
 					"name": "Context",
@@ -139,6 +159,72 @@
 					"pathVariables": {}
 				},
 				{
+					"id": "5f481baa-63ca-4d4e-8410-e257c5dc9953",
+					"name": "Answer :: Delete by ID",
+					"url": "http://localhost:3002/answer/60a1e75116eb34c1dbbe2252",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "DELETE",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "3daa54bd-38da-4f65-8b17-60174a0be7cf",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				},
+				{
+					"id": "674c380b-b9c5-4ee7-a9b3-8560f55642ce",
+					"name": "Answer :: Find by ID",
+					"url": "http://localhost:3002/answer/60a3328d0974020882e3604b",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "3daa54bd-38da-4f65-8b17-60174a0be7cf",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				},
+				{
+					"id": "69178be3-f35a-4698-a4b5-bd3f6ee180db",
+					"name": "Answer :: Update",
+					"url": "http://localhost:3002/answer/update",
+					"description": "",
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "3daa54bd-38da-4f65-8b17-60174a0be7cf",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"rawModeData": "{\n    \"id\": \"60a3328d0974020882e3604b\",\n    \"learner\": \"60a0a250b3f4c9ba0e32b7c1\"\n}",
+					"headers": "",
+					"pathVariables": {}
+				},
+				{
 					"id": "760bcdcc-c296-4eba-ae84-93c594af6660",
 					"name": "Line Item :: Find by ID",
 					"url": "http://localhost:3002/lineitem/60a1f37b9786c2c3a4547d94",
@@ -248,6 +334,35 @@
 					"currentHelper": null,
 					"helperAttributes": null,
 					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				},
+				{
+					"id": "a739d67d-ac94-4922-b8ec-31e8c2f8cbc3",
+					"name": "Answer :: Create",
+					"url": "http://localhost:3002/answer",
+					"description": "",
+					"data": [
+						{
+							"key": "file",
+							"value": "http://teste.com",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"dataOptions": null,
+					"dataMode": "urlencoded",
+					"headerData": [],
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [],
+					"folder": "3daa54bd-38da-4f65-8b17-60174a0be7cf",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"headers": "",
 					"pathVariables": {}
 				},
 				{
@@ -413,7 +528,7 @@
 	],
 	"environments": [
 		{
-			"id": "90cb7670-3ccd-4a9d-99db-9aa57faee252",
+			"id": "d3622957-59d9-44f1-b962-f1f4482f16cb",
 			"name": "My Workspace - globals",
 			"values": []
 		}
