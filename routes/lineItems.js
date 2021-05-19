@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const LineItemsService = require('../services/lineItems');
+const ContextService = require('../services/context');
 
 router.get('/lineitem/:id', async (req, res) => {
     const { params } = req;
@@ -10,10 +11,16 @@ router.get('/lineitem/:id', async (req, res) => {
 
 router.post('/lineitem', async (req, res) => {
     const { body } = req;
-    const { title, description } = body;
+    const { contextId, title, description } = body;
     const lineItem = new LineItemsService({ title, description });
     const result = await lineItem.insert();
-    res.send(result);
+    const { status, data } = result;
+    if (status === 200) {
+        const contextResult = await ContextService.updateLineItems(contextId, data);
+        res.send(contextResult);
+    } else {
+        res.send(result);
+    }
 })
 
 router.post('/lineitem/update', async (req, res) => {

@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const ContextService = require('../services/context');
 
+router.get('/context', async (req, res) => {
+    const result = await ContextService.getAll();
+    res.send(result)
+})
+
 router.get('/context/:id', async (req, res) => {
     const { params } = req;
     const { id } = params;

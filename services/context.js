@@ -12,6 +12,14 @@ class Contexts {
         this.lineItems = lineItems;
     }
 
+    static async getAll() {
+        const result = await Context.find();
+        if (result) {
+            return Request.success(result, 'Context encontrado');
+        }
+        return Request.error(result, 'Falha ao encontrar context');
+    }
+
     static async getByName(name) {
         const result = await Context.findOne({ name }).populate('users').exec();
         if (result) {
@@ -66,19 +74,32 @@ class Contexts {
 
     async update() {
         const query = { _id: this.id };
-        const objectIdUsers = this.users.map(item => {
-            const { id, role } = item;
-            return {
-                role,
-                user: mongoose.Types.ObjectId(id)
-            }
-        });
-        const data = {
-            name: this.name,
-            type: this.type,
-            users: objectIdUsers,
-            lineItems: this.lineItems,
-        };
+        const data = {};
+
+        if (this.name) data.name = this.name;
+        if (this.type) data.type = this.type;
+        if (this.lineItems) data.lineItems = this.lineItems;
+        if (this.users) {
+            data.users = this.users.map(item => {
+                const { id, role } = item;
+                return {
+                    role,
+                    user: mongoose.Types.ObjectId(id)
+                }
+            });
+        }
+
+        const result = await Context.findOneAndUpdate(query, data, { new: true });
+        if (result) {
+            return Request.success(result, 'Context atualizado com sucesso');
+        }
+        return Request.error(result, 'Falha ao atualizar context');
+    }
+
+    static async updateLineItems(id, lineItem) {
+        const query = { _id: id };
+        const data = { $push: { lineItems: lineItem } };
+
         const result = await Context.findOneAndUpdate(query, data, { new: true });
         if (result) {
             return Request.success(result, 'Context atualizado com sucesso');
