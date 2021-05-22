@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const LineItemService = require('../services/lineItems');
 const AnswerService = require('../services/answers');
 
 router.get('/answer/:id', async (req, res) => {
@@ -10,10 +11,16 @@ router.get('/answer/:id', async (req, res) => {
 
 router.post('/answer', async (req, res) => {
     const { body } = req;
-    const { file } = body;
-    const answer = new AnswerService({ file });
+    const { lineItemId, file, learner } = body;
+    const answer = new AnswerService({ file, learner });
     const result = await answer.insert();
-    res.send(result);
+    const { status, data } = result;
+    if (status === 200) {
+        const lineItemResult = await LineItemService.updateAnswers(lineItemId, data);
+        res.send(lineItemResult);
+    } else {
+        res.send(result);
+    }
 })
 
 router.post('/answer/update', async (req, res) => {

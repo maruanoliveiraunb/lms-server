@@ -17,7 +17,16 @@ class LineItems {
     }
 
     static async getById(id) {
-        const result = await LineItem.findById(id).exec();
+        const result = await LineItem
+            .findById(id)
+            .populate({
+                path: 'answers',
+                populate: {
+                    path:  'learner',
+                    model: 'User'
+                }
+            })
+            .exec();
         if (result) {
             return Request.success(result, 'Atividade encontrada');
         }
@@ -44,7 +53,22 @@ class LineItems {
 
     async update() {
         const query = { _id: this.id };
-        const data = { title: this.title, description: this.description };
+        const data = {};
+
+        if (this.title) data.title = this.title;
+        if (this.description) data.description = this.description;
+
+        const result = await LineItem.findOneAndUpdate(query, data, { new: true });
+        if (result) {
+            return Request.success(result, 'Atividade atualizada com sucesso');
+        }
+        return Request.error(result, 'Falha ao atualizar atividade');
+    }
+
+    static async updateAnswers(id, answer) {
+        const query = { _id: id };
+        const data = { $push: { answers: answer } };
+
         const result = await LineItem.findOneAndUpdate(query, data, { new: true });
         if (result) {
             return Request.success(result, 'Atividade atualizada com sucesso');

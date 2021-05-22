@@ -10,6 +10,10 @@ const LineItemSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        answers: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer",
+        }],
     }
 );
 

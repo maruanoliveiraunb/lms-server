@@ -34,7 +34,7 @@ class Answers {
     }
 
     async insert() {
-        const answer = new Answer({ file: this.file });
+        const answer = new Answer({ file: this.file, learner: this.learner });
         const result = await answer.save();
         if (result) {
             return Request.success(result, 'Resposta cadastrada com sucesso');
