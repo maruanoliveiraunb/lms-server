@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/user.model');
 const Request = require('./request');
 
 class Users {
@@ -17,6 +17,14 @@ class Users {
     }
 
     static async getById(id) {
+        const result = await User.findById(id).exec();
+        if (result) {
+            return Request.success(result, 'Usuário encontrado');
+        }
+        return Request.error(result, 'Falha ao encontrar usuário');
+    }
+
+    static async getByEmail(email) {
         const result = await User.findById(id).exec();
         if (result) {
             return Request.success(result, 'Usuário encontrado');
