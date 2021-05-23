@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const ContextService = require('../services/context');
+const UserService = require('../services/users');
 
 router.get('/context', async (req, res) => {
     const result = await ContextService.getAll();
@@ -26,6 +27,16 @@ router.post('/context/update', async (req, res) => {
     const { id, name, type, users, lineItems } = body;
     const context = new ContextService({ id, name, type, users, lineItems });
     const result = await context.update();
+    res.send(result);
+})
+
+router.post('/context/update/user', async (req, res) => {
+    const { body } = req;
+    const { contextId, userId } = body;
+    console.log(body);
+    const user = await UserService.getById(userId);
+    const { data } = user;
+    const result = ContextService.updateUsers(contextId, data);
     res.send(result);
 })
 

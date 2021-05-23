@@ -7,11 +7,17 @@ const Role = require("../models/role.model");
 const Request = require('./request');
 
 exports.signup = (req, res) => {
+    const { body } = req;
+    const { name, username, email, password } = body;
+
     const user = new User({
-        username: req.body.username,
-        email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 8)
+        name: name,
+        username: username,
+        email: email,
+        password: bcrypt.hashSync(password, 8)
     });
+
+    console.log('user signup', user);
 
     user.save((err, user) => {
         if (err) {
@@ -101,6 +107,7 @@ exports.signin = (req, res) => {
 
             const data = {
                 id: user._id,
+                name: user.name,
                 username: user.username,
                 email: user.email,
                 roles: authorities,

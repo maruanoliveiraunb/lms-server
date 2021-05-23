@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Context = require('../models/context');
 const Request = require('./request');
+const Roles = require('../constants/roles');
 
 class Contexts {
 
@@ -102,7 +103,25 @@ class Contexts {
 
         const result = await Context.findOneAndUpdate(query, data, { new: true });
         if (result) {
-            return Request.success(result, 'Context atualizado com sucesso');
+            return Request.success(result, 'Context atualizado com nova atividade com sucesso');
+        }
+        return Request.error(result, 'Falha ao atualizar context');
+    }
+
+    static async updateUsers(id, user) {
+        const query = { _id: id };
+
+        const userData = {
+            role: Roles.LEARNER,
+            user: user,
+        };
+
+        console.log('userData', userData);
+        const data = { $push: { users: userData } };
+
+        const result = await Context.findOneAndUpdate(query, data, { new: true });
+        if (result) {
+            return Request.success(result, 'Context atualizado com novo usuário com sucesso');
         }
         return Request.error(result, 'Falha ao atualizar context');
     }
