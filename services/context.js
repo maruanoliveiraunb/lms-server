@@ -34,7 +34,15 @@ class Contexts {
             .findById(id)
             .populate('users.user')
             .populate('lineItems')
+            .populate({
+                path: 'lineItems',
+                populate: {
+                    path:  'answers',
+                    model: 'Answer'
+                }
+            })
             .exec();
+
         if (result) {
             const { name, type, users, lineItems } = result;
             const newUsers = users.map(item => {
