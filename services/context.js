@@ -124,12 +124,28 @@ class Contexts {
             user: user,
         };
 
-        console.log('userData', userData);
         const data = { $push: { users: userData } };
 
         const result = await Context.findOneAndUpdate(query, data, { new: true });
         if (result) {
             return Request.success(result, 'Context atualizado com novo usuário com sucesso');
+        }
+        return Request.error(result, 'Falha ao atualizar context');
+    }
+
+    static async updateInstructorUsers(id, user) {
+        const query = { _id: id };
+
+        const userData = {
+            role: Roles.INSTRUCTOR,
+            user: user,
+        };
+
+        const data = { $push: { users: userData } };
+
+        const result = await Context.findOneAndUpdate(query, data, { new: true, returnOriginal: true, upsert: true });
+        if (result) {
+            return Request.success({}, 'Context atualizado com novo usuário com sucesso');
         }
         return Request.error(result, 'Falha ao atualizar context');
     }

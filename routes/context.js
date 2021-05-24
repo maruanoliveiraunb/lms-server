@@ -33,10 +33,18 @@ router.post('/context/update', async (req, res) => {
 router.post('/context/update/user', async (req, res) => {
     const { body } = req;
     const { contextId, userId } = body;
-    console.log(body);
     const user = await UserService.getById(userId);
     const { data } = user;
-    const result = ContextService.updateUsers(contextId, data);
+    const result = await ContextService.updateUsers(contextId, data);
+    res.send(result);
+})
+
+router.post('/context/update/instructor', async (req, res) => {
+    const { body } = req;
+    const { contextId, userId } = body;
+    const user = await UserService.getById(userId);
+    const { data } = user;
+    const result = await ContextService.updateInstructorUsers(contextId, data);
     res.send(result);
 })
 
