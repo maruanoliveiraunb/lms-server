@@ -17,8 +17,6 @@ exports.signup = (req, res) => {
         password: bcrypt.hashSync(password, 8)
     });
 
-    console.log('user signup', user);
-
     user.save((err, user) => {
         if (err) {
             res.status(500).send({ message: err });
@@ -43,7 +41,8 @@ exports.signup = (req, res) => {
                             return;
                         }
 
-                        res.send({ message: "User was registered successfully!" });
+                        const result = Request.success({}, 'Usuário cadastrado com sucesso');
+                        res.send(result);
                     });
                 }
             );
@@ -61,7 +60,8 @@ exports.signup = (req, res) => {
                         return;
                     }
 
-                    res.send({ message: "User was registered successfully!" });
+                    const result = Request.success({}, 'Usuário cadastrado com sucesso');
+                    res.send(result);
                 });
             });
         }
