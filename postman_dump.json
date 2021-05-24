@@ -13,7 +13,8 @@
 				"c885cada-118f-4643-aad8-96d7adb5c389",
 				"1d16b47a-bd42-4c69-a76d-ee1e19965d04",
 				"c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
-				"3daa54bd-38da-4f65-8b17-60174a0be7cf"
+				"3daa54bd-38da-4f65-8b17-60174a0be7cf",
+				"6fec6eab-bd60-4ac5-a268-cfad97fd88f7"
 			],
 			"protocolProfileBehavior": {},
 			"folders": [
@@ -35,6 +36,27 @@
 					"protocolProfileBehavior": {},
 					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
 					"folderId": "3daa54bd-38da-4f65-8b17-60174a0be7cf"
+				},
+				{
+					"id": "6fec6eab-bd60-4ac5-a268-cfad97fd88f7",
+					"uid": "0-6fec6eab-bd60-4ac5-a268-cfad97fd88f7",
+					"name": "Auth",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folder": null,
+					"order": [
+						"567c40c8-0c38-4c94-bdb7-f92f34e189e1",
+						"cc670473-7ca2-404f-8307-74aad04e4e54",
+						"2a5c5d83-efb0-4d65-9f7c-c340979ca383"
+					],
+					"folders_order": [],
+					"owner": "0",
+					"protocolProfileBehavior": {},
+					"createdAt": "2021-05-22T04:20:58.299Z",
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"folderId": "6fec6eab-bd60-4ac5-a268-cfad97fd88f7"
 				},
 				{
 					"id": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
@@ -159,6 +181,60 @@
 					"pathVariables": {}
 				},
 				{
+					"id": "2a5c5d83-efb0-4d65-9f7c-c340979ca383",
+					"uid": "0-2a5c5d83-efb0-4d65-9f7c-c340979ca383",
+					"name": "Auth :: SignIn",
+					"url": "http://localhost:3002/auth/signin",
+					"description": null,
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "6fec6eab-bd60-4ac5-a268-cfad97fd88f7",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"rawModeData": "{\n    \"username\": \"germana\",\n    \"password\": \"12345678\"\n}",
+					"pathVariables": {}
+				},
+				{
+					"id": "567c40c8-0c38-4c94-bdb7-f92f34e189e1",
+					"uid": "0-567c40c8-0c38-4c94-bdb7-f92f34e189e1",
+					"name": "Auth :: Signup",
+					"url": "http://localhost:3002/auth/signup",
+					"description": null,
+					"data": [],
+					"dataOptions": {
+						"raw": {
+							"language": "json"
+						}
+					},
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "6fec6eab-bd60-4ac5-a268-cfad97fd88f7",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"rawModeData": "{\n    \"name\": \"Maruan\",\n    \"username\": \"maruan\",\n    \"email\": \"maruan@gmail.com\",\n    \"password\": \"12345678\",\n    \"roles\": [\"user\"]\n}",
+					"pathVariables": {}
+				},
+				{
 					"id": "5f481baa-63ca-4d4e-8410-e257c5dc9953",
 					"name": "Answer :: Delete by ID",
 					"url": "http://localhost:3002/answer/60a1e75116eb34c1dbbe2252",
@@ -227,7 +303,7 @@
 				{
 					"id": "760bcdcc-c296-4eba-ae84-93c594af6660",
 					"name": "Line Item :: Find by ID",
-					"url": "http://localhost:3002/lineitem/60a1f37b9786c2c3a4547d94",
+					"url": "http://localhost:3002/lineitem/60a49a8c8910b2303d6dede9",
 					"description": "",
 					"data": null,
 					"dataOptions": null,
@@ -267,7 +343,15 @@
 					],
 					"dataOptions": null,
 					"dataMode": "urlencoded",
-					"headerData": [],
+					"headerData": [
+						{
+							"key": "x-access-token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTljNTIxM2YyMGJjMTcwNTE2ZGQ4MyIsImlhdCI6MTYyMTczODgxNywiZXhwIjoxNjIxODI1MjE3fQ.h7EHi_y5-0P-teYvh21_VGfglGURUrpy40VBeZ02W0g",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
 					"method": "POST",
 					"pathVariableData": [],
 					"queryParams": [],
@@ -277,7 +361,7 @@
 					"currentHelper": null,
 					"helperAttributes": null,
 					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
-					"headers": "",
+					"headers": "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTljNTIxM2YyMGJjMTcwNTE2ZGQ4MyIsImlhdCI6MTYyMTczODgxNywiZXhwIjoxNjIxODI1MjE3fQ.h7EHi_y5-0P-teYvh21_VGfglGURUrpy40VBeZ02W0g\n",
 					"pathVariables": {}
 				},
 				{
@@ -484,10 +568,11 @@
 					"pathVariables": {}
 				},
 				{
-					"id": "fbea5a33-277a-4753-80c8-c044e22c2971",
-					"name": "Context :: Find by ID",
-					"url": "http://localhost:3002/context/60a1eb33eabd06c297e28f31",
-					"description": "",
+					"id": "cc670473-7ca2-404f-8307-74aad04e4e54",
+					"uid": "0-cc670473-7ca2-404f-8307-74aad04e4e54",
+					"name": "Auth :: User Content",
+					"url": "http://localhost:3002/test/user",
+					"description": null,
 					"data": null,
 					"dataOptions": null,
 					"dataMode": null,
@@ -497,10 +582,40 @@
 					"queryParams": [],
 					"auth": null,
 					"events": null,
+					"folder": "6fec6eab-bd60-4ac5-a268-cfad97fd88f7",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"pathVariables": {}
+				},
+				{
+					"id": "fbea5a33-277a-4753-80c8-c044e22c2971",
+					"name": "Context :: Find by ID",
+					"url": "http://localhost:3002/context/60a9c5623f20bc170516dd84",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "x-access-token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTljNTIxM2YyMGJjMTcwNTE2ZGQ4MyIsImlhdCI6MTYyMTc5NDcyMSwiZXhwIjoxNjIxODgxMTIxfQ.dJczKbOmt_tCNlBVO2uqODnSMPXUv5uNw0TL50ZnvbA",
+							"description": "",
+							"type": "text",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
 					"folder": "c7bfc7a9-c4b6-48c7-b5db-9326321e9471",
 					"currentHelper": null,
 					"helperAttributes": null,
 					"collectionId": "380ec540-45a3-4342-86fc-4a78adec09de",
+					"headers": "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwYTljNTIxM2YyMGJjMTcwNTE2ZGQ4MyIsImlhdCI6MTYyMTc5NDcyMSwiZXhwIjoxNjIxODgxMTIxfQ.dJczKbOmt_tCNlBVO2uqODnSMPXUv5uNw0TL50ZnvbA\n",
 					"pathVariables": {}
 				},
 				{
@@ -528,7 +643,7 @@
 	],
 	"environments": [
 		{
-			"id": "d3622957-59d9-44f1-b962-f1f4482f16cb",
+			"id": "1effde5c-86ba-42a8-b81f-59de313bee66",
 			"name": "My Workspace - globals",
 			"values": []
 		}
