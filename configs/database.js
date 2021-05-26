@@ -3,7 +3,7 @@ const Role = require("../models/role.model");
 
 module.exports = () => {
     mongoose
-        .connect(process.env.DB_URI, {
+        .connect('mongodb+srv://lmsUser:jwSRdavsj5pZOkEG@cluster0.f1xdm.mongodb.net/lms?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
