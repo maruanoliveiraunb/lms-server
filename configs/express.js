@@ -6,7 +6,7 @@ const { authJwt, authHeaders } = require("../middlewares");
 
 module.exports = () => {
     const app = express()
-    const port = process.env.SERVER_PORT
+    const port = process.env.SERVER_PORT || 3000
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
